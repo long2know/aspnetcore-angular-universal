@@ -1,0 +1,18 @@
+﻿<div class="container-fluid">
+  <div class="row">
+    <strong class="float-left">Custom Table</strong>
+    <label class="float-right">
+      <input type="checkbox" name="hasChanges" [(ngModel)]="hasChanges"> Has Changes
+    </label>
+  </div>
+  <hr>
+  <!--<div class="row">
+    <filter [options]="filterOptions" (filterChange)="filterChange($event)"></filter>
+  </div>-->
+  <div class="row">
+    <custom-table [options]="tableOptions" (sortChange)="sortChange($event)">Custom table here</custom-table>
+  </div>
+  <!--<div class="row">
+    <pager [options]="tableOptions" (pageChange)="pageChange($event)"></pager>
+  </div>-->
+</div>

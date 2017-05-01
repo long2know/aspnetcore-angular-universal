@@ -1,4 +1,4 @@
-{
+﻿{
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Asp2017": {
+    "aspnetcore-angular": {
       "commandName": "Project"
     }
   }

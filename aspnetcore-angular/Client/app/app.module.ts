@@ -14,8 +14,13 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './containers/home/home.component';
 import { UsersComponent } from './containers/users/users.component';
-import { CounterComponent } from './containers/counter/counter.component';
+import { TableDemoComponent } from './containers/tableDemo/tableDemo.component';
 import { ChatComponent } from './containers/chat/chat.component';
+import { CustomTable, CustomTableOptions, CustomTableConfig, CustomTableColumnDefinition } from './components/customTable/customTable.component';
+import { Tristate } from './components/tristate/tristate.component';
+import { DataService } from './shared/data.service';
+import { LoremIpsumService } from './shared/loremipsum.service';
+
 import { Ng2BootstrapComponent } from './containers/ng2-bootstrap-demo/ng2bootstrap.component';
 
 import { LinkService } from './shared/link.service';
@@ -37,12 +42,14 @@ export function createTranslateLoader(http: Http, baseHref) {
     declarations: [
         AppComponent,
         NavMenuComponent,
-        CounterComponent,
+        Tristate,
+        CustomTable,
+        TableDemoComponent,
         UsersComponent,
         HomeComponent,
         ChatComponent,
         Ng2BootstrapComponent
-    ], 
+    ],
     imports: [
         CommonModule,
         HttpModule,
@@ -85,10 +92,10 @@ export function createTranslateLoader(http: Http, baseHref) {
                 }
             },
             {
-                path: 'counter', component: CounterComponent,
+                path: 'tableDemo', component: TableDemoComponent,
                 data: {
-                    title: 'Counter',
-                    meta: [{ name: 'description', content: 'This is an Counter page Description!' }],
+                    title: 'Table Demo',
+                    meta: [{ name: 'description', content: 'This is a demo of the custom table component!' }],
                     links: [
                         { rel: 'canonical', href: 'http://blogs.example.com/counter/something' },
                         { rel: 'alternate', hreflang: 'es', href: 'http://es.example.com/counter' }
@@ -139,7 +146,9 @@ export function createTranslateLoader(http: Http, baseHref) {
         LinkService,
         UserService,
         ConnectionResolver,
-        TranslateModule
+        TranslateModule,
+        DataService,
+        LoremIpsumService
     ]
 })
 export class AppModule {
